@@ -1,0 +1,19 @@
+import canonicalLaneMathlib.AdmissibleClass
+import GeodesicsGlobalDifferentialGeometryCanonicalLaneLean.GeodesicEquation
+import GeodesicsGlobalDifferentialGeometryCanonicalLaneLean.ExponentialMap
+import GeodesicsGlobalDifferentialGeometryCanonicalLaneLean.JacobiFields
+import GeodesicsGlobalDifferentialGeometryCanonicalLaneLean.ComparisonTheorems
+import GeodesicsGlobalDifferentialGeometryCanonicalLaneLean.GeodesicCompleteness
+
+namespace HautevilleHouse
+namespace GeodesicsGlobalDifferentialGeometryCanonicalLaneLean
+
+def ConstrainedGeodesicClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_geodesic_endgame (A : AdmissibleClass) :
+    ConstrainedGeodesicClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end GeodesicsGlobalDifferentialGeometryCanonicalLaneLean
+end HautevilleHouse
